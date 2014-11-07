@@ -3,8 +3,9 @@
     <head>
         <meta charset="UTF-8" />
         <title><?php echo htmlspecialchars( $results['pageTitle'])?></title>
-        <link rel="stylesheet" type="text/css" href="../styles/css/normalize.css"/>
-        <link rel="stylesheet" type="text/css" href="../styles/css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="styles/css/normalize.css"/>
+        <link rel="stylesheet" type="text/css" href="styles/css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="styles/css/application.css"/>
     </head>
     <body>
         <div id="container">

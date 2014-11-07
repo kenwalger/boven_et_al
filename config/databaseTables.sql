@@ -45,4 +45,4 @@ CREATE TABLE members
 
     
 INSERT INTO members (memberID, username, password) VALUES
-    (1, 'admin', '21232f297a57a5a743894a0e4a801fc3');# 1 row affected.
+    (1, 'admin', 'admin');# 1 row affected.

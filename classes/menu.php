@@ -101,7 +101,7 @@ class Menu
     *********************************************************************/
  
     public static function getList( $numRows=1000000, $order="publicationDate DESC" ) {
-        $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
+        $conn = new PDO( DB_DBN, DB_USERNAME, DB_PASSWORD );
         $sql = "SELECT SQL_CALC_FOUND_ROWS *, UNIX_TIMESTAMP(publicationDate) AS publicationDate FROM menus
                 ORDER BY " . mysql_escape_string($order) . " LIMIT :numRows";
 
@@ -130,7 +130,7 @@ class Menu
     public function insert() {
 
         // Does the Menu object already have an ID?
-        if ( !is_null( $this->id ) ) trigger_error ( "Menu::insert(): Attempt to insert an Menu object that already has its ID property set (to $this->id).", E_USER_ERROR );
+        if ( !is_null( $this->id ) ) trigger_error ( "Menu::insert(): Attempt to insert a Menu object that already has its ID property set (to $this->id).", E_USER_ERROR );
 
         // Insert the Menu
         $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
@@ -153,7 +153,7 @@ class Menu
     public function update() {
 
         // Does the Menu object have an ID?
-        if ( is_null( $this->id ) ) trigger_error ( "Menu::update(): Attempt to update an Menu object that does not have its ID property set.", E_USER_ERROR );
+        if ( is_null( $this->id ) ) trigger_error ( "Menu::update(): Attempt to update a Menu object that does not have its ID property set.", E_USER_ERROR );
 
         // Update the Menu
         $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
@@ -176,7 +176,7 @@ class Menu
     public function delete() {
 
         // Does the Menu object have an ID?
-        if ( is_null( $this->id ) ) trigger_error ( "Menu::delete(): Attempt to delete an Menu object that does not have its ID property set.", E_USER_ERROR );
+        if ( is_null( $this->id ) ) trigger_error ( "Menu::delete(): Attempt to delete a Menu object that does not have its ID property set.", E_USER_ERROR );
 
         // Delete the Menu
         $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
