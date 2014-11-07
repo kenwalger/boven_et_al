@@ -5,10 +5,10 @@ DROP TABLE IF EXISTS menus;# MySQL returned an empty result set (i.e. zero rows)
 CREATE TABLE menus
 (
   id              smallint unsigned NOT NULL auto_increment,
-  publicationDate date NOT NULL,                              # When the article was published
-  title           varchar(255) NOT NULL,                      # Full title of the article
-  summary         text NOT NULL,                              # A short summary of the article
-  content         mediumtext NOT NULL,                        # The HTML content of the article
+  publicationDate date NOT NULL,                              # When the menu was published
+  title           varchar(255) NOT NULL,                      # Full title of the menu
+  summary         text NOT NULL,                              # A short summary of the menu
+  content         mediumtext NOT NULL,                        # The HTML content of the menu
   
 
   PRIMARY KEY     (id)
@@ -21,8 +21,8 @@ CREATE TABLE recipes
 (
     recipeID        smallint unsigned NOT NULL auto_increment,
     pubDate         date NOT NULL,
-    title           varchar(255) NOT NULL,                      # Full title of the article
-    category         text NOT NULL,                              # A short summary of the article
+    title           varchar(255) NOT NULL,                      # Full title of the recipe
+    category         text NOT NULL,                              # A short summary of the recipe
     ingredients     mediumtext NOT NULL,
     
     PRIMARY KEY     (recipeID)
