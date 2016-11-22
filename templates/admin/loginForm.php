@@ -10,13 +10,13 @@
         <ul>
  
           <li>
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username" placeholder="Your admin username" required autofocus maxlength="20" />
+            <label for="username" >Username</label>
+            <input type="text" name="username" id="username" title="Username is Admin" placeholder="Your admin username" required autofocus maxlength="20" />
           </li>
  
           <li>
             <label for="password">Password</label>
-            <input type="password" name="password" id="password" placeholder="Your admin password" required maxlength="20" />
+            <input type="password" name="password" id="password" title="Username is admin" placeholder="Your admin password" required maxlength="20" />
           </li>
  
         </ul>

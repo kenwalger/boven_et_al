@@ -20,7 +20,7 @@ class Menu
     public $publicationDate = null;
 
     /*********************************************************************
-    * @var string Full titel of the menu
+    * @var string Full title of the menu
     *********************************************************************/
     public $title = null;
 
@@ -81,7 +81,7 @@ class Menu
     *********************************************************************/
  
     public static function getById( $id ) {
-        $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
+        $conn = new PDO( DB_DBN, DB_USERNAME, DB_PASSWORD );
         $sql = "SELECT *, UNIX_TIMESTAMP(publicationDate) AS publicationDate FROM menus WHERE id = :id";
         $st = $conn->prepare( $sql );
         $st->bindValue( ":id", $id, PDO::PARAM_INT );
@@ -133,7 +133,7 @@ class Menu
         if ( !is_null( $this->id ) ) trigger_error ( "Menu::insert(): Attempt to insert a Menu object that already has its ID property set (to $this->id).", E_USER_ERROR );
 
         // Insert the Menu
-        $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
+        $conn = new PDO( DB_DBN, DB_USERNAME, DB_PASSWORD );
         $sql = "INSERT INTO menus ( publicationDate, title, summary, content ) VALUES ( FROM_UNIXTIME(:publicationDate), :title, :summary, :content )";
         $st = $conn->prepare ( $sql );
         $st->bindValue( ":publicationDate", $this->publicationDate, PDO::PARAM_INT );
@@ -156,7 +156,7 @@ class Menu
         if ( is_null( $this->id ) ) trigger_error ( "Menu::update(): Attempt to update a Menu object that does not have its ID property set.", E_USER_ERROR );
 
         // Update the Menu
-        $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
+        $conn = new PDO( DB_DBN, DB_USERNAME, DB_PASSWORD );
         $sql = "UPDATE menus SET publicationDate=FROM_UNIXTIME(:publicationDate), title=:title, summary=:summary, content=:content WHERE id = :id";
         $st = $conn->prepare ( $sql );
         $st->bindValue( ":publicationDate", $this->publicationDate, PDO::PARAM_INT );
@@ -179,7 +179,7 @@ class Menu
         if ( is_null( $this->id ) ) trigger_error ( "Menu::delete(): Attempt to delete a Menu object that does not have its ID property set.", E_USER_ERROR );
 
         // Delete the Menu
-        $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
+        $conn = new PDO( DB_DBN, DB_USERNAME, DB_PASSWORD );
         $st = $conn->prepare ( "DELETE FROM menus WHERE id = :id LIMIT 1" );
         $st->bindValue( ":id", $this->id, PDO::PARAM_INT );
         $st->execute();

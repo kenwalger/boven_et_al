@@ -19,13 +19,15 @@ DROP TABLE IF EXISTS recipes;# MySQL returned an empty result set (i.e. zero row
 
 CREATE TABLE recipes
 (
-    recipeID        smallint unsigned NOT NULL auto_increment,
+    recipeId        smallint unsigned NOT NULL auto_increment,
     pubDate         date NOT NULL,
     title           varchar(255) NOT NULL,                      # Full title of the recipe
-    category         text NOT NULL,                              # A short summary of the recipe
-    ingredients     mediumtext NOT NULL,
+    category         text NOT NULL,                             # The cateogry of the recipe (appetizer, soup, entree, dessert)
+    description     mediumtext NOT NULL,                        # The menu description for the recipe
+    foodCost        int(10) NOT NULL,                           # cost of total menu item
+    menuPrice       int(10) NOT NULL,                           # menu price
     
-    PRIMARY KEY     (recipeID)
+    PRIMARY KEY     (recipeId)
     
 )ENGINE=MyISAM DEFAULT CHARSET=UTF8 AUTO_INCREMENT=2;# MySQL returned an empty result set (i.e. zero rows).
 

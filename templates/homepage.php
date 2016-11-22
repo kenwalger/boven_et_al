@@ -7,7 +7,7 @@
     <li>
         <h2>
             <span class="pubDate"><?php echo date('j F', $menu->publicationDate)?></span>
-                <a href=".?action=viewArticle&amp;menuId=<?php echo $menu->id?>">
+                <a href=".?action=viewMenu&amp;menuId=<?php echo $menu->id?>">
                     <?php echo htmlspecialchars( $menu->title)?>
                 </a>
         </h2>
@@ -17,6 +17,6 @@
     
     </ul>
 
-    <p><a href="./?action=archive">Menu Archive</a></p>
+    <p><a href="./?action=menu">Menu Archive</a></p>
 
 <?php include "templates/include/footer.php" ?>
